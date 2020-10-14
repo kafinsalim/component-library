@@ -5,13 +5,15 @@
   "main": "dist/component-library.js",
   "module": "dist/component-library.es.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && npm run build:storybook",
+    "build:storybook": "build-storybook -o public",
     "bundle-size": "cat dist/component-library.js | gzip | wc -c",
     "storybook": "start-storybook -p 9000 -c .storybook"
   },
   "files": [
     "dist"
   ],
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=10.0.0"
   },
@@ -28,6 +30,7 @@
     "@emotion/styled": "^10.0.27",
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-typescript": "^6.0.0",
     "@storybook/addon-knobs": "^6.0.26",
     "@storybook/addons": "^6.0.26",
     "@storybook/react": "^6.0.26",
@@ -38,7 +41,13 @@
     "react-dom": "^16.13.1",
     "rollup": "^2.29.0",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-dts": "^1.4.13",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-progress": "^1.1.2",
     "rollup-plugin-terser": "^7.0.2",
-    "storybook-addon-jsx": "^7.3.4"
+    "rollup-plugin-visualizer": "^4.1.1",
+    "storybook-addon-jsx": "^7.3.4",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.3"
   }
 }
