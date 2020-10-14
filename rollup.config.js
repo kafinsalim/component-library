@@ -1,34 +1,51 @@
-import fs from 'fs';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import filesize from 'rollup-plugin-filesize';
+import progress from 'rollup-plugin-progress';
+import visualizer from 'rollup-plugin-visualizer';
 import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
+import dts from 'rollup-plugin-dts';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 
-const pkg = JSON.parse(
-  fs.readFileSync('./package.json', { encoding: 'utf-8' })
-);
-
 export default {
-  input: 'components',
+  input: 'components/index.ts',
   external: ['react', '@emotion/core', '@emotion/styled'],
   plugins: [
     babel({
       exclude: 'node_modules/**',
     }),
-    commonjs(),
+    typescript({ jsx: 'react' }),
+    commonjs({ extensions: ['.js', '.ts'] }),
     nodeResolve({ browser: true }),
+
+    // generate d.ts file
+    dts(),
+
+    // minifies es bundles
     terser(),
+
+    // logs the filesize in cli when done
+    filesize(),
+
+    // Progress while building
+    progress({ clearLine: false }),
+
+    // Generates a statistics page
+    visualizer({
+      filename: './statistics.html',
+      title: 'App Bundle size statistic',
+    }),
   ],
   output: [
     {
-      file: pkg.main,
-      format: 'cjs',
+      file: 'dist/index.js',
+      format: 'es',
       sourcemap: true,
     },
     {
-      file: pkg.module,
+      file: 'dist/index.d.ts',
       format: 'es',
-      sourcemap: true,
     },
   ],
 };
