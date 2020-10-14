@@ -94,7 +94,7 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
 
 const StyledButton = ({
   color,
-  size,
+  size = "small",
   variant,
   enableElevation,
   disabled,

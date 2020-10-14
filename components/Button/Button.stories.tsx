@@ -10,11 +10,11 @@ export default {
   decorators,
 };
 
-export const solidButton = () => {
-  return <Button> Default Solid Button </Button>;
+export const SolidButton = () => {
+  return <Button> Solid Button </Button>;
 };
 
-export const solidButtonWithProps = () => {
+export const SolidButtonWithProps = () => {
   return (
     <Button
       color={text('color', '')}
@@ -27,7 +27,7 @@ export const solidButtonWithProps = () => {
   );
 };
 
-export const outlineButtonWithProps = () => {
+export const OutlineButtonWithProps = () => {
   return (
     <Button
       variant="outline"
@@ -51,7 +51,7 @@ const theme = {
   },
 };
 
-export const solidButtonWithTheme = () => {
+export const SolidButtonWithTheme = () => {
   return (
     <ThemeProvider theme={theme}>
       <Button

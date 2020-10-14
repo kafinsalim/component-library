@@ -8,7 +8,9 @@
     "build": "rollup -c && npm run build:storybook",
     "build:storybook": "build-storybook -o public",
     "bundle-size": "cat dist/component-library.js | gzip | wc -c",
-    "storybook": "start-storybook -p 9000 -c .storybook"
+    "storybook": "start-storybook -p 9000 -c .storybook",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "files": [
     "dist"
@@ -20,9 +22,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "polished": "^3.6.7"
-  },
   "devDependencies": {
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
@@ -32,11 +31,20 @@
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-typescript": "^6.0.0",
     "@storybook/addon-knobs": "^6.0.26",
+    "@storybook/addon-storyshots": "^6.0.26",
     "@storybook/addons": "^6.0.26",
     "@storybook/react": "^6.0.26",
     "@storybook/theming": "^6.0.26",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^12.1.7",
+    "@types/jest": "^26.0.14",
+    "babel-jest": "^26.5.2",
     "babel-loader": "^8.1.0",
     "emotion-theming": "^10.0.27",
+    "jest": "^26.5.3",
+    "jest-emotion": "^10.0.32",
+    "polished": "^3.6.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup": "^2.29.0",
@@ -47,6 +55,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-visualizer": "^4.1.1",
     "storybook-addon-jsx": "^7.3.4",
+    "ts-jest": "^26.4.1",
     "tslib": "^2.0.3",
     "typescript": "^4.0.3"
   }
