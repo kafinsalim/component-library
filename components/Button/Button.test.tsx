@@ -15,7 +15,7 @@ describe('<Button />', () => {
     expect(screen.getByRole('button')).toMatchSnapshot()
   });
 
-  it('should occure a click event', () => {
+  it('should occured some click event', () => {
     const onClick = jest.fn()
     render(<Button onClick={onClick}>Default Button</Button>)
     // click one time
