@@ -4,15 +4,10 @@ import {
   isObjectEmpty,
   spacing,
   fontSizes,
-  ITheme,
   theme as defaultTheme,
 } from '../../utils';
+import { buttonPropSize, IButtonProps, PropsByVariant, variantType } from './Button.type';
 
-import { Theme } from '@storybook/theming';
-
-type buttonPropSize ={
-  [key: string]: any
-}
 const buttonSizeProps: buttonPropSize = {
   small: {
     fontSize: fontSizes['xsmall'],
@@ -28,11 +23,7 @@ const buttonSizeProps: buttonPropSize = {
   },
 };
 
-type PropsByVariant = {
-  variant: string,
-  color: string,
-  theme: ITheme,
-}
+
 
 const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
   const colorInPalette = theme.palette[color];
@@ -87,9 +78,7 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
     },
   };
 
-  type variantType = {
-    [key: string]: any
-  }
+
 
   const variants: variantType = {
     outline: colorInPalette
@@ -102,16 +91,6 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
 
   return variants[variant] || variants.solid;
 };
-
-export interface IButtonProps {
-  color?: string,
-  size?: string,
-  variant?: string,
-  enableElevation?: boolean,
-  disabled?: boolean,
-  theme?: any,
-  onClick?: any
-}
 
 const StyledButton = ({
   color,
