@@ -4,10 +4,16 @@ import {
   isObjectEmpty,
   spacing,
   fontSizes,
+  ITheme,
   theme as defaultTheme,
 } from '../../utils';
 
-const buttonSizeProps = {
+import { Theme } from '@storybook/theming';
+
+type buttonPropSize ={
+  [key: string]: any
+}
+const buttonSizeProps: buttonPropSize = {
   small: {
     fontSize: fontSizes['xsmall'],
     padding: `${spacing['xsmall']} ${spacing['small']}`,
@@ -22,7 +28,13 @@ const buttonSizeProps = {
   },
 };
 
-const getPropsByVariant = ({ variant, color, theme }) => {
+type PropsByVariant = {
+  variant: string,
+  color: string,
+  theme: ITheme,
+}
+
+const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
   const colorInPalette = theme.palette[color];
 
   const defaultOutlineVariantProps = {
@@ -75,7 +87,11 @@ const getPropsByVariant = ({ variant, color, theme }) => {
     },
   };
 
-  const variants = {
+  type variantType = {
+    [key: string]: any
+  }
+
+  const variants: variantType = {
     outline: colorInPalette
       ? outlineVariantPropsByPalette
       : defaultOutlineVariantProps,
@@ -87,6 +103,16 @@ const getPropsByVariant = ({ variant, color, theme }) => {
   return variants[variant] || variants.solid;
 };
 
+export interface IButtonProps {
+  color?: string,
+  size?: string,
+  variant?: string,
+  enableElevation?: boolean,
+  disabled?: boolean,
+  theme?: any,
+  onClick?: any
+}
+
 const StyledButton = ({
   color,
   size,
@@ -94,7 +120,7 @@ const StyledButton = ({
   enableElevation,
   disabled,
   theme,
-}) => {
+}: IButtonProps) => {
   if (isObjectEmpty(theme)) {
     theme = defaultTheme;
   }
@@ -127,8 +153,9 @@ const StyledButton = ({
 const IGNORED_PROPS = ['color'];
 
 const buttonConfig = {
-  shouldForwardProp: (prop) =>
+  shouldForwardProp: (prop: any) =>
     isPropValid(prop) && !IGNORED_PROPS.includes(prop),
 };
 
 export const Button = styled('button', buttonConfig)(StyledButton);
+

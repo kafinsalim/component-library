@@ -1,3 +1,4 @@
+import { object } from '@storybook/addon-knobs';
 import { spacing } from './units';
 
 const white = '#fff';
@@ -41,7 +42,18 @@ const shape = {
   borderRadius: spacing['xxsmall'],
 };
 
-export const theme = {
+type palleteTypes = {
+  [key: string]: any
+}
+
+export interface ITheme {
+  palette: palleteTypes,
+  shadows: object,
+  typography: object,
+  shape: object
+}
+
+export const theme: ITheme = {
   palette,
   shadows,
   typography,

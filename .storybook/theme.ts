@@ -31,7 +31,7 @@ export default create({
   inputTextColor: 'black',
   inputBorderRadius: 5,
 
-  brandTitle: 'My component library',
-  brandUrl: 'https://ademola.adegbuyi.me',
-  brandImage: '',
+  brandTitle: 'Tatsu-UI',
+  brandUrl: 'https://style-guide.tatsu.lol',
+  brandImage: 'https://tatsu.gg/static/Logo.png',
 });
