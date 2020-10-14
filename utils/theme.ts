@@ -1,13 +1,43 @@
-import { object } from '@storybook/addon-knobs';
+import { transparentize } from 'polished';
 import { spacing } from './units';
 
-const white = '#fff';
+const white = transparentize(0.75, '#fff');
+const white75 = transparentize(0.5, '#fff');
+const white50 = transparentize(0.25, '#fff');
 const black = '#111';
+const yellow = '#F2CC23';
+const yellowDarker = '#E3BF22';
+const green = '#17A167';
+const red = '#F96854';
+const red75 = '#F96854';
+const grey = '#B9B8B9';
+// background
+const blackDark = '#2D2F33';
+const blackDarker = '#282A2E';
+const blackDarkest = '#202225';
+// button
+const greyDark = '#494B50';
+const grey10 = '#B9B8B9';
+const redError = '#DB524E';
 
 const palette = {
   common: {
-    black,
     white,
+    white75,
+    white50,
+    black,
+    yellow,
+    yellowDarker,
+    green,
+    red,
+    red75,
+    grey,
+    blackDark,
+    blackDarker,
+    blackDarkest,
+    greyDark,
+    grey10,
+    redError,
   },
   primary: {
     main: '#0070F3',
