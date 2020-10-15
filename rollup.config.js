@@ -7,6 +7,10 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import pkg from './package.json';
+import tsconfig from './tsconfig.json';
+
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 export default {
   input: 'components/index.ts',
@@ -15,9 +19,11 @@ export default {
     babel({
       exclude: 'node_modules/**',
     }),
-    typescript({ jsx: 'react' }),
-    commonjs({ extensions: ['.js', '.ts'] }),
-    nodeResolve({ browser: true }),
+    typescript({
+      ...tsconfig.compilerOptions,
+    }),
+    commonjs(),
+    nodeResolve({ browser: true, extensions }),
 
     // generate d.ts file
     dts(),
@@ -39,12 +45,17 @@ export default {
   ],
   output: [
     {
-      file: 'dist/index.js',
+      file: pkg.module,
       format: 'es',
       sourcemap: true,
     },
     {
-      file: 'dist/index.d.ts',
+      file: pkg.main,
+      format: 'cjs',
+      sourcemap: true,
+    },
+    {
+      file: pkg.types,
       format: 'es',
     },
   ],
