@@ -5,7 +5,7 @@ import progress from 'rollup-plugin-progress';
 import visualizer from 'rollup-plugin-visualizer';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
-import dts from 'rollup-plugin-dts';
+// import dts from 'rollup-plugin-dts';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import pkg from './package.json';
 import tsconfig from './tsconfig.json';
@@ -25,9 +25,6 @@ export default {
     commonjs(),
     nodeResolve({ browser: true, extensions }),
 
-    // generate d.ts file
-    dts(),
-
     // minifies es bundles
     terser(),
 
@@ -42,6 +39,9 @@ export default {
       filename: './statistics.html',
       title: 'App Bundle size statistic',
     }),
+
+    // generate d.ts file
+    // dts(),
   ],
   output: [
     {
@@ -54,9 +54,9 @@ export default {
       format: 'cjs',
       sourcemap: true,
     },
-    {
-      file: pkg.types,
-      format: 'es',
-    },
+    // {
+    //   file: pkg.types,
+    //   format: 'es',
+    // },
   ],
 };
