@@ -2,20 +2,18 @@
   "name": "component-library",
   "version": "0.0.2",
   "description": "",
-  "main": "dist/component-library.js",
-  "module": "dist/component-library.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
-    "build": "rollup -c && npm run build:storybook",
+    "build": "rollup -c",
     "build:storybook": "build-storybook -o public",
     "bundle-size": "cat dist/component-library.js | gzip | wc -c",
     "storybook": "start-storybook -p 9000 -c .storybook",
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=10.0.0"
   },
