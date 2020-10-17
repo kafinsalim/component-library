@@ -4,6 +4,7 @@ import { spacing } from './units';
 const white = transparentize(0.75, '#fff');
 const white75 = transparentize(0.5, '#fff');
 const white50 = transparentize(0.25, '#fff');
+const black50 = transparentize(0.75, '#000');
 const black = '#111';
 const yellow = '#F2CC23';
 const yellowDarker = '#E3BF22';
@@ -18,6 +19,7 @@ const blackDarkest = '#202225';
 // button
 const greyDark = '#494B50';
 const grey10 = '#B9B8B9';
+const grey100 = '#9E9E9E';
 const redError = '#DB524E';
 
 const palette = {
@@ -25,24 +27,31 @@ const palette = {
     white,
     white75,
     white50,
-    black,
+
     yellow,
     yellowDarker,
+
     green,
+
     red,
     red75,
-    grey,
+    redError,
+
+    black,
     blackDark,
     blackDarker,
     blackDarkest,
+    black50,
+
+    grey,
     greyDark,
     grey10,
-    redError,
+    grey100,
   },
   primary: {
-    main: '#0070F3',
-    light: '#146DD6',
-    contrastText: white,
+    main: greyDark,
+    light: white50,
+    contrastText: 'white',
   },
   error: {
     main: '#A51C30',
@@ -55,21 +64,29 @@ const palette = {
     300: '#888',
     400: '#666',
   },
+  yellow: {
+    main: yellow,
+    light: '#FFF9C4',
+    dark: yellowDarker,
+    contrastText: greyDark,
+  }
 };
 
 const shadows = {
   0: 'none',
   1: '0px 5px 10px rgba(0,0,0,0.12)',
   2: '0px 8px 30px rgba(0,0,0,0.24)',
+  3: '0px 4px 15px rgba(0,0,0,0.25)'
 };
 
 const typography = {
-  fontFamily:
-    "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif",
+  fontFamily: "'Rubik', sans-serif",
 };
 
 const shape = {
   borderRadius: spacing['xxsmall'],
+  borderRadius10: '10px',
+  borderRadius5: '5px',
 };
 
 type palleteTypes = {

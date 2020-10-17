@@ -13,10 +13,19 @@ export const spacing = {
 };
 
 export const fontSizes = {
-  xsmall: '0.79rem',
-  small: '0.889rem',
+  xsmall: '0.75rem',
+  small: '0.825rem',
   medium: '1rem',
   large: '1.125rem',
-  xlarge: '1.266rem',
-  xxlarge: '1.424rem',
+  xlarge: '1.25rem',
+  xxlarge: '1.5rem',
+};
+
+// https://material-ui.com/customization/breakpoints/
+export const breakpoints = {
+  xsmall: '0px',
+  small: '600px',
+  medium: '960px',
+  large: '1280px',
+  xlarge: '1920px'
 };
