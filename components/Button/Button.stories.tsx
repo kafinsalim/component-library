@@ -9,11 +9,17 @@ import { SpacingBottom, DarkBackground } from '../shared/styles';
 export default {
   title: 'Components/Button',
   decorators,
+  parameters: {
+    info: { 
+      source: false,
+      propTablesExclude: [SpacingBottom, DarkBackground, ThemeProvider]
+     },
+  },
 };
 
 export const Appearances = () => {
   return (
-    <>
+    <React.Fragment>
       <SpacingBottom>
         <Button> BUTTON </Button>
       </SpacingBottom>
@@ -29,7 +35,7 @@ export const Appearances = () => {
       <SpacingBottom>
         <Button color="primary" variant="link"> OTHER </Button>
       </SpacingBottom>
-    </>
+    </React.Fragment>
   );
 };
 
@@ -57,7 +63,7 @@ export const WithDarkBackground = () => {
 
 export const DisableState = () => {
   return (
-    <>
+    <React.Fragment>
       <SpacingBottom>
         <Button disabled> BUTTON </Button>
       </SpacingBottom>
@@ -70,13 +76,13 @@ export const DisableState = () => {
       <SpacingBottom>
         <Button disabled color="primary" variant="icon-circle"> ☕ </Button>
       </SpacingBottom>
-    </>
+    </React.Fragment>
   );
 };
 
 export const LoadingState = () => {
   return (
-    <>
+    <React.Fragment>
       <SpacingBottom>
         <Button loading> BUTTON </Button>
       </SpacingBottom>
@@ -89,26 +95,26 @@ export const LoadingState = () => {
       <SpacingBottom>
         <Button loading color="primary" variant="icon-circle"> ☕ </Button>
       </SpacingBottom>
-    </>
+    </React.Fragment>
   );
 };
 
 export const WithIcon = () => {
   return (
-    <>
+    <React.Fragment>
       <SpacingBottom>
         <Button startIcon={"😜"} endIcon={"►"}> BUTTON </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button startIcon={"😜"} endIcon={"►"} color="primary"> PRIMARY </Button>
       </SpacingBottom>
-  </>
+  </React.Fragment>
   )
 };
 
 export const Stressed = () => {
   return (
-    <>
+    <React.Fragment>
       <SpacingBottom>
         <Button startIcon={"😜"} endIcon={"►"}> BUTTON1IO23IO3UIO32I32OI32IO32OI3UI23UOI2U32OI3I232I323 2I3UI2O3UI23IO2U3I2I3UI23I2I3 </Button>
       </SpacingBottom>
@@ -121,7 +127,7 @@ export const Stressed = () => {
       <SpacingBottom>
         <Button color="primary" variant="icon-circle"> ASDJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ </Button>
       </SpacingBottom>
-  </>
+  </React.Fragment>
   )
 };
 

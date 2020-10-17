@@ -203,9 +203,9 @@ const IconWrapper = styled.span`
 const StyledButton = ({
   color,
   size = "medium",
-  variant,
-  enableElevation,
-  disabled,
+  variant= "solid",
+  enableElevation = false,
+  disabled = false,
   theme
 }: IButtonProps) => {
   if (isObjectEmpty(theme)) {
