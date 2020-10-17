@@ -217,7 +217,7 @@ const StyledButton = ({
 
   const propsByVariant = getPropsByVariant({ variant, theme, color });
 
-  const iconStyleMainDesktop = {
+  const iconStyleDesktop = {
     width: 52,
     minWidth: 52,
   }
@@ -259,7 +259,7 @@ const StyledButton = ({
     '@media (min-width: 600px)': {
       height: 52,
       fontSize: fontSizes.small,
-      ...(variant?.includes('icon') && iconStyleMainDesktop)
+      ...(variant?.includes('icon') && iconStyleDesktop)
     },
   };
 };

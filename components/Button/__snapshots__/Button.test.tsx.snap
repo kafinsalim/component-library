@@ -2,22 +2,41 @@
 
 exports[`<Button /> should render the default button with a text 1`] = `
 .emotion-0 {
+  height: 48px;
+  min-width: 96px;
   font-weight: 500;
   cursor: pointer;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.79rem;
-  border-radius: 0.25rem;
-  font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',sans-serif;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
   border: 1px solid #EAEAEA;
   background-color: #EAEAEA;
   color: #111;
+  font-size: 0.75rem;
 }
 
 .emotion-0:hover {
   border: 1px solid #C9C5C5;
   background-color: #C9C5C5;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    height: 52px;
+    font-size: 0.825rem;
+  }
 }
 
 <button
@@ -27,20 +46,231 @@ exports[`<Button /> should render the default button with a text 1`] = `
 </button>
 `;
 
+exports[`<Button /> should render the primary button 1`] = `
+.emotion-0 {
+  height: 48px;
+  min-width: 96px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
+  border: 2px solid transparent;
+  background-color: #494B50;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.emotion-0:hover {
+  border: 2px solid transparent;
+  background-color: #F2CC23;
+  color: #494B50;
+}
+
+.emotion-0:active {
+  border: 2px solid transparent;
+  background-color: #E3BF22;
+  color: #2D2F33;
+}
+
+.emotion-0:focus {
+  border: 2px solid rgba(255,255,255,0.75);
+  background-color: #494B50;
+  color: white;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  border: 2px solid transparent;
+  background-color: #888;
+  color: rgba(255,255,255,0.5);
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    height: 52px;
+    font-size: 0.825rem;
+  }
+}
+
+<button
+  class="emotion-0"
+>
+  Primary
+</button>
+`;
+
+exports[`<Button /> should render the variant="icon" 1`] = `
+.emotion-0 {
+  height: 48px;
+  min-width: 48px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0 !important;
+  border-radius: 10px;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
+  border: 2px solid transparent;
+  background-color: #494B50;
+  color: white;
+  width: 48px;
+  font-size: 0.75rem;
+}
+
+.emotion-0:hover {
+  border: 2px solid transparent;
+  background-color: #F2CC23;
+  color: #494B50;
+}
+
+.emotion-0:active {
+  border: 2px solid transparent;
+  background-color: #E3BF22;
+  color: #2D2F33;
+}
+
+.emotion-0:focus {
+  border: 2px solid rgba(255,255,255,0.75);
+  background-color: #494B50;
+  color: white;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  border: 2px solid transparent;
+  background-color: #888;
+  color: rgba(255,255,255,0.5);
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    height: 52px;
+    font-size: 0.825rem;
+    width: 52px;
+    min-width: 52px;
+  }
+}
+
+<button
+  class="emotion-0"
+>
+  icon
+</button>
+`;
+
+exports[`<Button /> should render the variant="icon-circle" 1`] = `
+.emotion-0 {
+  height: 48px;
+  min-width: 48px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0 !important;
+  border-radius: 50%;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
+  border: 2px solid transparent;
+  background-color: #494B50;
+  color: white;
+  width: 48px;
+  font-size: 0.75rem;
+}
+
+.emotion-0:hover {
+  border: 2px solid transparent;
+  background-color: #F2CC23;
+  color: #494B50;
+}
+
+.emotion-0:active {
+  border: 2px solid transparent;
+  background-color: #E3BF22;
+  color: #2D2F33;
+}
+
+.emotion-0:focus {
+  border: 2px solid rgba(255,255,255,0.75);
+  background-color: #494B50;
+  color: white;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  border: 2px solid transparent;
+  background-color: #888;
+  color: rgba(255,255,255,0.5);
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    height: 52px;
+    font-size: 0.825rem;
+    width: 52px;
+    min-width: 52px;
+  }
+}
+
+<button
+  class="emotion-0"
+>
+  icon circle
+</button>
+`;
+
 exports[`<Button /> should render with disabled attribute & cannot be click 1`] = `
 .emotion-0 {
+  height: 48px;
+  min-width: 96px;
   font-weight: 500;
   cursor: pointer;
   opacity: 0.7;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.889rem;
-  border-radius: 0.25rem;
-  font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',sans-serif;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
   border: 1px solid #EAEAEA;
   background-color: #EAEAEA;
   color: #111;
+  font-size: 0.75rem;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    height: 52px;
+    font-size: 0.825rem;
+  }
 }
 
 <button
@@ -53,24 +283,46 @@ exports[`<Button /> should render with disabled attribute & cannot be click 1`] 
 
 exports[`<Button /> should render with enable elevation 1`] = `
 .emotion-0 {
+  height: 48px;
+  min-width: 96px;
   font-weight: 500;
   cursor: pointer;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.889rem;
-  border-radius: 0.25rem;
-  font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',sans-serif;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
   box-shadow: 0px 5px 10px rgba(0,0,0,0.12);
   border: 1px solid #EAEAEA;
   background-color: #EAEAEA;
   color: #111;
+  font-size: 0.75rem;
 }
 
 .emotion-0:hover {
   box-shadow: 0px 8px 30px rgba(0,0,0,0.24);
   border: 1px solid #C9C5C5;
   background-color: #C9C5C5;
+}
+
+.emotion-0:active {
+  box-shadow: 0px 8px 30px rgba(0,0,0,0.24);
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    height: 52px;
+    font-size: 0.825rem;
+  }
 }
 
 <button
@@ -80,112 +332,78 @@ exports[`<Button /> should render with enable elevation 1`] = `
 </button>
 `;
 
-exports[`<Button /> should render with size medium 1`] = `
-.emotion-0 {
+exports[`<Button /> should render with loading spinner 1`] = `
+@keyframes animation-0 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.emotion-1 {
+  height: 48px;
+  min-width: 96px;
   font-weight: 500;
   cursor: pointer;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.889rem;
-  border-radius: 0.25rem;
-  font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',sans-serif;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
   border: 1px solid #EAEAEA;
   background-color: #EAEAEA;
   color: #111;
+  font-size: 0.75rem;
 }
 
-.emotion-0:hover {
+.emotion-1:hover {
   border: 1px solid #C9C5C5;
   background-color: #C9C5C5;
 }
 
-<button
-  class="emotion-0"
->
-  With Size Props Medium
-</button>
-`;
+.emotion-1:disabled {
+  cursor: not-allowed;
+}
 
-exports[`<Button /> should render with size small 1`] = `
+@media (min-width:600px) {
+  .emotion-1 {
+    height: 52px;
+    font-size: 0.825rem;
+  }
+}
+
 .emotion-0 {
-  font-weight: 500;
-  cursor: pointer;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.79rem;
-  border-radius: 0.25rem;
-  font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',sans-serif;
-  border: 1px solid #EAEAEA;
-  background-color: #EAEAEA;
-  color: #111;
-}
-
-.emotion-0:hover {
-  border: 1px solid #C9C5C5;
-  background-color: #C9C5C5;
+  -webkit-animation: animation-0 1s linear infinite;
+  animation: animation-0 1s linear infinite;
 }
 
 <button
-  class="emotion-0"
+  class="emotion-1"
 >
-  With Size Props Small
-</button>
-`;
-
-exports[`<Button /> should render with variant outline & primary color 1`] = `
-.emotion-0 {
-  font-weight: 500;
-  cursor: pointer;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.889rem;
-  border-radius: 0.25rem;
-  font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',sans-serif;
-  border: 1px solid #0070F3;
-  background-color: rgba(255,255,255,0.25);
-  color: #0070F3;
-}
-
-.emotion-0:hover {
-  border: 1px solid #146DD6;
-  background-color: rgba(255,255,255,0.25);
-  color: #146DD6;
-}
-
-<button
-  class="emotion-0"
->
-  With Variant & color
-</button>
-`;
-
-exports[`<Button /> should render with variant outline 1`] = `
-.emotion-0 {
-  font-weight: 500;
-  cursor: pointer;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.889rem;
-  border-radius: 0.25rem;
-  font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',sans-serif;
-  border: 1px solid #111;
-  background-color: rgba(255,255,255,0.25);
-  color: #111;
-}
-
-.emotion-0:hover {
-  border: 1px solid #111;
-  background-color: rgba(255,255,255,0.25);
-  color: #111;
-}
-
-<button
-  class="emotion-0"
->
-  With variant
+  <svg
+    class="emotion-0"
+    fill="none"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+  >
+    <path
+      d="M21.477 11.424a.922.922 0 00-1.843.086 7.366 7.366 0 11-3.38-5.853.922.922 0 10.996-1.553 9.208 9.208 0 104.227 7.32z"
+      fill="#fff"
+    />
+  </svg>
 </button>
 `;
