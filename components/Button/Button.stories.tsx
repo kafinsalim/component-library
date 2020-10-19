@@ -4,40 +4,131 @@ import { boolean, text } from '@storybook/addon-knobs';
 import decorators from '../../.storybook/utils';
 import { theme as defaultTheme } from '../../utils';
 import { Button } from '../';
+import { SpacingBottom, DarkBackground } from '../shared/styles';
 
 export default {
   title: 'Components/Button',
   decorators,
+  parameters: {
+    info: { 
+      source: false,
+      propTablesExclude: [SpacingBottom, DarkBackground, ThemeProvider]
+     },
+  },
 };
 
-export const SolidButton = () => {
-  return <Button> Solid Button </Button>;
-};
-
-export const SolidButtonWithProps = () => {
+export const Appearances = () => {
   return (
-    <Button
-      color={text('color', '')}
-      size={text('size', '')}
-      disabled={boolean('disabled', false)}
-      enableElevation={boolean('enableElevation', false)}
-    >
-      Solid Button
-    </Button>
+    <React.Fragment>
+      <SpacingBottom>
+        <Button> BUTTON </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="icon"> ☕ </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="icon-circle"> ☕ </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="link"> OTHER </Button>
+      </SpacingBottom>
+    </React.Fragment>
   );
 };
 
-export const OutlineButtonWithProps = () => {
+export const WithDarkBackground = () => {
   return (
-    <Button
-      variant="outline"
-      size={text('size', '')}
-      disabled={boolean('disabled', false)}
-      enableElevation={boolean('enableElevation', false)}
-    >
-      Outline Button
-    </Button>
+    <DarkBackground>
+      <SpacingBottom>
+        <Button> BUTTON </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="icon"> ☕ </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="icon-circle"> ☕ </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="link"> OTHER </Button>
+      </SpacingBottom>
+    </DarkBackground>
   );
+};
+
+export const DisableState = () => {
+  return (
+    <React.Fragment>
+      <SpacingBottom>
+        <Button disabled> BUTTON </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button disabled color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button disabled color="primary" variant="icon"> ☕ </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button disabled color="primary" variant="icon-circle"> ☕ </Button>
+      </SpacingBottom>
+    </React.Fragment>
+  );
+};
+
+export const LoadingState = () => {
+  return (
+    <React.Fragment>
+      <SpacingBottom>
+        <Button loading> BUTTON </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button loading color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button loading color="primary" variant="icon"> ☕ </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button loading color="primary" variant="icon-circle"> ☕ </Button>
+      </SpacingBottom>
+    </React.Fragment>
+  );
+};
+
+export const WithIcon = () => {
+  return (
+    <React.Fragment>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"}> BUTTON </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"} color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+  </React.Fragment>
+  )
+};
+
+export const Stressed = () => {
+  return (
+    <React.Fragment>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"}> BUTTON1IO23IO3UIO32I32OI32IO32OI3UI23UOI2U32OI3I232I323 2I3UI2O3UI23IO2U3I2I3UI23I2I3 </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"} color="primary"> PRIMARY 23KLL3JK2J3KL2J 3LK2ASDASDASDASDJ3LK2J3LK23 2K3J 2LK3J2K3JL23J2K3J2L3J2K32 </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="icon"> AKJSDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="icon-circle"> ASDJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ </Button>
+      </SpacingBottom>
+  </React.Fragment>
+  )
 };
 
 const theme = {
@@ -47,11 +138,12 @@ const theme = {
     orange: {
       main: '#F34706',
       light: '#FF5964',
+      contrastText: '#fff'
     },
   },
 };
 
-export const SolidButtonWithTheme = () => {
+export const OverwriteWithTheme = () => {
   return (
     <ThemeProvider theme={theme}>
       <Button
@@ -61,7 +153,7 @@ export const SolidButtonWithTheme = () => {
         disabled={boolean('disabled', false)}
         enableElevation={boolean('enableElevation', false)}
       >
-        Outline Button
+        ORANGE
       </Button>
     </ThemeProvider>
   );

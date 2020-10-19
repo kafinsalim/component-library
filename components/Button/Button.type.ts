@@ -23,5 +23,14 @@ export interface IButtonProps {
   enableElevation?: boolean,
   disabled?: boolean,
   theme?: any,
-  onClick?: any
+  onClick?: any,
+  children: React.ReactNode,
+  startIcon?: React.ReactNode,
+  endIcon?: React.ReactNode,
+  loading?: boolean
+}
+
+export type iconWrapperProp = {
+  leftSpacing?: boolean,
+  rightSpacing?: boolean,
 }
