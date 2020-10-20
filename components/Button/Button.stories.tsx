@@ -17,42 +17,23 @@ export default {
   },
 };
 
-export const Appearances = () => {
-  return (
-    <React.Fragment>
-      <SpacingBottom>
-        <Button> BUTTON </Button>
-      </SpacingBottom>
-      <SpacingBottom>
-        <Button color="primary"> PRIMARY </Button>
-      </SpacingBottom>
-      <SpacingBottom>
-        <Button color="primary" variant="outline"> PRIMARY OUTLINE </Button>
-      </SpacingBottom>
-      <SpacingBottom>
-        <Button color="primary" variant="icon"> ☕ </Button>
-      </SpacingBottom>
-      <SpacingBottom>
-        <Button color="primary" variant="icon-circle"> ☕ </Button>
-      </SpacingBottom>
-      <SpacingBottom>
-        <Button color="primary" variant="link"> OTHER </Button>
-      </SpacingBottom>
-    </React.Fragment>
-  );
-};
-
-export const WithDarkBackground = () => {
+export const Appereances = () => {
   return (
     <DarkBackground>
       <SpacingBottom>
-        <Button> BUTTON </Button>
+        <Button> DEFAULT </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button color="primary"> PRIMARY </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button color="primary" variant="outline"> PRIMARY OUTLINE </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="secondary"> SECONDARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="secondary" variant="outline"> SECONDARY OUTLINE </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button color="primary" variant="icon"> ☕ </Button>
@@ -69,9 +50,9 @@ export const WithDarkBackground = () => {
 
 export const DisableState = () => {
   return (
-    <React.Fragment>
+    <DarkBackground>
       <SpacingBottom>
-        <Button disabled> BUTTON </Button>
+        <Button disabled> DEFAULT </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button disabled color="primary"> PRIMARY </Button>
@@ -80,20 +61,26 @@ export const DisableState = () => {
         <Button disabled color="primary" variant="outline"> PRIMARY OUTLINE </Button>
       </SpacingBottom>
       <SpacingBottom>
+        <Button disabled color="secondary"> SECONDARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button disabled color="secondary" variant="outline"> SECONDARY OUTLINE </Button>
+      </SpacingBottom>
+      <SpacingBottom>
         <Button disabled color="primary" variant="icon"> ☕ </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button disabled color="primary" variant="icon-circle"> ☕ </Button>
       </SpacingBottom>
-    </React.Fragment>
+    </DarkBackground>
   );
 };
 
 export const LoadingState = () => {
   return (
-    <React.Fragment>
+    <DarkBackground>
       <SpacingBottom>
-        <Button loading> BUTTON </Button>
+        <Button loading> DEFAULT </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button loading color="primary"> PRIMARY </Button>
@@ -102,20 +89,26 @@ export const LoadingState = () => {
         <Button loading color="primary" variant="outline"> PRIMARY OUTLINE </Button>
       </SpacingBottom>
       <SpacingBottom>
+        <Button loading color="secondary"> SECONDARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button loading color="secondary" variant="outline"> SECONDARY OUTLINE </Button>
+      </SpacingBottom>
+      <SpacingBottom>
         <Button loading color="primary" variant="icon"> ☕ </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button loading color="primary" variant="icon-circle"> ☕ </Button>
       </SpacingBottom>
-    </React.Fragment>
+    </DarkBackground>
   );
 };
 
 export const WithIcon = () => {
   return (
-    <React.Fragment>
+    <DarkBackground>
       <SpacingBottom>
-        <Button startIcon={"😜"} endIcon={"►"}> BUTTON </Button>
+        <Button startIcon={"😜"} endIcon={"►"}> DEFAULT </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button startIcon={"😜"} endIcon={"►"} color="primary"> PRIMARY </Button>
@@ -123,13 +116,19 @@ export const WithIcon = () => {
       <SpacingBottom>
         <Button startIcon={"😜"} endIcon={"►"} color="primary" variant="outline"> PRIMARY OUTLINE </Button>
       </SpacingBottom>
-  </React.Fragment>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"} color="secondary"> SECONDARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"} color="secondary" variant="outline"> SECONDARY OUTLINE </Button>
+      </SpacingBottom>
+  </DarkBackground>
   )
 };
 
 export const Stressed = () => {
   return (
-    <React.Fragment>
+    <DarkBackground>
       <SpacingBottom>
         <Button> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
@@ -140,12 +139,18 @@ export const Stressed = () => {
         <Button color="primary" variant="outline"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
       <SpacingBottom>
+        <Button color="secondary"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="secondary" variant="outline"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
+      </SpacingBottom>
+      <SpacingBottom>
         <Button color="primary" variant="icon"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button color="primary" variant="icon-circle"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
-  </React.Fragment>
+  </DarkBackground>
   )
 };
 
@@ -164,15 +169,17 @@ const theme = {
 export const OverwriteWithTheme = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Button
-        variant={text('variant', 'solid')}
-        color={text('color', 'orange')}
-        size={text('size', 'medium')}
-        disabled={boolean('disabled', false)}
-        enableElevation={boolean('enableElevation', false)}
-      >
-        ORANGE
-      </Button>
+      <DarkBackground>
+        <Button
+          variant={text('variant', 'solid')}
+          color={text('color', 'orange')}
+          size={text('size', 'medium')}
+          disabled={boolean('disabled', false)}
+          enableElevation={boolean('enableElevation', false)}
+        >
+          ORANGE
+        </Button>
+      </DarkBackground>
     </ThemeProvider>
   );
 };
