@@ -20,10 +20,45 @@ describe('<Button />', () => {
     render(<Button color="primary">Primary</Button>)
 
     expect(screen.getByText('Primary')).toBeInTheDocument()
-    expect(screen.getByRole('button')).toHaveStyleRule('height', '48px')
+    expect(screen.getByRole('button')).toHaveStyleRule('min-height', '48px')
     expect(screen.getByRole('button')).toHaveStyleRule('border-radius', '10px')
     expect(screen.getByRole('button')).toHaveStyleRule('padding', `${spacing["small"]} ${spacing["gutter"]}`)
     expect(screen.getByRole('button')).toHaveStyleRule('background-color', theme.palette.primary.main)
+    expect(screen.getByRole('button')).toMatchSnapshot()
+  });
+
+  it('should render the primary button with outline', () => {
+    render(<Button color="primary" variant="outline">Primary</Button>)
+
+    expect(screen.getByText('Primary')).toBeInTheDocument()
+    expect(screen.getByRole('button')).toHaveStyleRule('min-height', '48px')
+    expect(screen.getByRole('button')).toHaveStyleRule('border-radius', '10px')
+    expect(screen.getByRole('button')).toHaveStyleRule('padding', `${spacing["small"]} ${spacing["gutter"]}`)
+    expect(screen.getByRole('button')).toHaveStyleRule('background-color', 'transparent')
+    expect(screen.getByRole('button')).toHaveStyleRule('border', `3px solid ${theme.palette.yellow.main}`)
+    expect(screen.getByRole('button')).toMatchSnapshot()
+  });
+
+  it('should render the secondary button', () => {
+    render(<Button color="secondary">Secondary</Button>)
+
+    expect(screen.getByText('Secondary')).toBeInTheDocument()
+    expect(screen.getByRole('button')).toHaveStyleRule('min-height', '42px')
+    expect(screen.getByRole('button')).toHaveStyleRule('border-radius', '10px')
+    expect(screen.getByRole('button')).toHaveStyleRule('padding', `${spacing["small"]} ${spacing["gutter"]}`)
+    expect(screen.getByRole('button')).toHaveStyleRule('background-color', '#494B50')
+    expect(screen.getByRole('button')).toMatchSnapshot()
+  });
+
+  it('should render the secondary button with outline', () => {
+    render(<Button color="secondary" variant="outline">Secondary</Button>)
+
+    expect(screen.getByText('Secondary')).toBeInTheDocument()
+    expect(screen.getByRole('button')).toHaveStyleRule('min-height', '42px')
+    expect(screen.getByRole('button')).toHaveStyleRule('border-radius', '10px')
+    expect(screen.getByRole('button')).toHaveStyleRule('padding', `${spacing["small"]} ${spacing["gutter"]}`)
+    expect(screen.getByRole('button')).toHaveStyleRule('background-color', 'rgba(185,184,185,0.1)')
+    expect(screen.getByRole('button')).toHaveStyleRule('border', `2px solid ${theme.palette.common.grey}`)
     expect(screen.getByRole('button')).toMatchSnapshot()
   });
   
@@ -35,7 +70,7 @@ describe('<Button />', () => {
     expect(screen.getByRole('button')).toHaveStyleRule('border-radius', '10px')
     expect(screen.getByRole('button')).toHaveStyleRule('padding', '0 !important')
     expect(screen.getByRole('button')).toHaveStyleRule('width', '48px')
-    expect(screen.getByRole('button')).toHaveStyleRule('height', '48px')
+    expect(screen.getByRole('button')).toHaveStyleRule('min-height', '48px')
     expect(screen.getByRole('button')).toMatchSnapshot()
   });
 
@@ -45,7 +80,7 @@ describe('<Button />', () => {
     expect(screen.getByText('icon circle')).toBeInTheDocument()
     expect(screen.getByRole('button')).toHaveStyleRule('border-radius', '50%')
     expect(screen.getByRole('button')).toHaveStyleRule('width', '48px')
-    expect(screen.getByRole('button')).toHaveStyleRule('height', '48px')
+    expect(screen.getByRole('button')).toHaveStyleRule('min-height', '48px')
     expect(screen.getByRole('button')).toMatchSnapshot()
   });
 
@@ -75,11 +110,10 @@ describe('<Button />', () => {
   });
 
   it('should render with loading spinner', () => {
-    const wrapper = render(<Button loading={true}>With disabled</Button>)
-    const button =  wrapper.container.firstElementChild
-    const spinnerLoading = button.firstChild
+    const wrapper = render(<Button loading>With disabled</Button>)
+    const svgSpinnerLoading = wrapper.container.getElementsByTagName('svg')
     
-    expect(spinnerLoading).toBeInTheDocument()
+    expect(svgSpinnerLoading[0]).toBeInTheDocument()
     expect(screen.getByRole('button')).toMatchSnapshot()
   });
 
