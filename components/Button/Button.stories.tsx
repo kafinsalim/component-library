@@ -27,6 +27,9 @@ export const Appearances = () => {
         <Button color="primary"> PRIMARY </Button>
       </SpacingBottom>
       <SpacingBottom>
+        <Button color="primary" variant="outline"> PRIMARY OUTLINE </Button>
+      </SpacingBottom>
+      <SpacingBottom>
         <Button color="primary" variant="icon"> ☕ </Button>
       </SpacingBottom>
       <SpacingBottom>
@@ -47,6 +50,9 @@ export const WithDarkBackground = () => {
       </SpacingBottom>
       <SpacingBottom>
         <Button color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="outline"> PRIMARY OUTLINE </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button color="primary" variant="icon"> ☕ </Button>
@@ -71,6 +77,9 @@ export const DisableState = () => {
         <Button disabled color="primary"> PRIMARY </Button>
       </SpacingBottom>
       <SpacingBottom>
+        <Button disabled color="primary" variant="outline"> PRIMARY OUTLINE </Button>
+      </SpacingBottom>
+      <SpacingBottom>
         <Button disabled color="primary" variant="icon"> ☕ </Button>
       </SpacingBottom>
       <SpacingBottom>
@@ -88,6 +97,9 @@ export const LoadingState = () => {
       </SpacingBottom>
       <SpacingBottom>
         <Button loading color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button loading color="primary" variant="outline"> PRIMARY OUTLINE </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button loading color="primary" variant="icon"> ☕ </Button>
@@ -108,6 +120,9 @@ export const WithIcon = () => {
       <SpacingBottom>
         <Button startIcon={"😜"} endIcon={"►"} color="primary"> PRIMARY </Button>
       </SpacingBottom>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"} color="primary" variant="outline"> PRIMARY OUTLINE </Button>
+      </SpacingBottom>
   </React.Fragment>
   )
 };
@@ -116,16 +131,19 @@ export const Stressed = () => {
   return (
     <React.Fragment>
       <SpacingBottom>
-        <Button startIcon={"😜"} endIcon={"►"}> BUTTON1IO23IO3UIO32I32OI32IO32OI3UI23UOI2U32OI3I232I323 2I3UI2O3UI23IO2U3I2I3UI23I2I3 </Button>
+        <Button> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
       <SpacingBottom>
-        <Button startIcon={"😜"} endIcon={"►"} color="primary"> PRIMARY 23KLL3JK2J3KL2J 3LK2ASDASDASDASDJ3LK2J3LK23 2K3J 2LK3J2K3JL23J2K3J2L3J2K32 </Button>
+        <Button color="primary"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
       <SpacingBottom>
-        <Button color="primary" variant="icon"> AKJSDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD </Button>
+        <Button color="primary" variant="outline"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
       <SpacingBottom>
-        <Button color="primary" variant="icon-circle"> ASDJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ </Button>
+        <Button color="primary" variant="icon"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="icon-circle"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
   </React.Fragment>
   )

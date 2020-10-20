@@ -8,7 +8,7 @@ import {
   theme as defaultTheme,
 } from '../../utils';
 import { buttonPropSize, IButtonProps, PropsByVariant, variantType, iconWrapperProp } from './Button.type';
-import { ButtonLoader } from './Loader';
+import { Loader } from './Loader';
 
 const buttonSizeProps: buttonPropSize = {
   small: {
@@ -45,13 +45,17 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
 
   const outlineVariantPropsByPalette = colorInPalette && {
     main: {
-      border: `3px solid ${colorInPalette.main}`,
+      border: `3px solid ${theme.palette.yellow.main}`,
       backgroundColor: 'transparent',
-      color: colorInPalette.main,
+      color: theme.palette.yellow.main,
+      // this will target the spinner loading
+      '& #loading_spinner_animated > path': {
+        fill: colorInPalette.main
+      }
     },
     hover: {
-      border: `3px solid ${theme.palette.yellow.main}`,
-      color: theme.palette.yellow.main,
+      border: `3px solid ${colorInPalette.main}`,
+      color: colorInPalette.main,
     },
     active: {
       border: `3px solid ${theme.palette.yellow.dark}`,
@@ -291,7 +295,7 @@ export const Button = (props: IButtonProps) => {
     </>
   )
 
-  const children = props.loading ? <ButtonLoader /> : <ChildrenAndIcon />
+  const children = props.loading ? <Loader /> : <ChildrenAndIcon />
 
   return (
     <MainButton {...props}>
