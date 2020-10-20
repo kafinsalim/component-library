@@ -29,8 +29,9 @@ export const SpacingBottom = styled.div`
 
 export const DarkBackground = styled.div`
   width: 100%;
-  background-color: #000;
+  background-color: #202225;
   padding: 2rem;
   box-sizing: border-box;
+  border-radius: 24px;
 `
 
