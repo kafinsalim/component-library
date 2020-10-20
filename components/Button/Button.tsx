@@ -8,7 +8,9 @@ import {
   theme as defaultTheme,
 } from '../../utils';
 import { buttonPropSize, IButtonProps, PropsByVariant, variantType, iconWrapperProp } from './Button.type';
-import { Loader } from './Loader';
+import { Loader } from '../Loader';
+import { ArrowRight } from './ArrowIcon';
+import { COLOR_SECONDARY } from './constants';
 
 const buttonSizeProps: buttonPropSize = {
   small: {
@@ -28,6 +30,7 @@ const buttonSizeProps: buttonPropSize = {
 
 
 const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
+  const isSecondary = color === COLOR_SECONDARY
   const colorInPalette = theme.palette[color];
 
   const defaultOutlineVariantProps = {
@@ -43,7 +46,7 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
     },
   };
 
-  const outlineVariantPropsByPalette = colorInPalette && {
+  const outlineVariantPropsByPalette = colorInPalette && !isSecondary ? {
     main: {
       border: `3px solid ${theme.palette.yellow.main}`,
       backgroundColor: 'transparent',
@@ -63,11 +66,32 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
     },
     focus: {
       border: `3px solid ${theme.palette.grey[300]}`,
-      color: colorInPalette.main
+      color: colorInPalette.contrastText
     },
     disabled: {
       border: `3px solid ${theme.palette.grey[300]}`,
       color: theme.palette.grey[300],
+    },
+  } : {
+    // secondary outline
+    main: {
+      border: `2px solid ${theme.palette.common.grey10}`,
+      backgroundColor: 'rgba(185, 184, 185, 0.1)',
+      color: 'white',
+      // arrow right transition
+      '& #arrow_right': {
+        position: 'relative',
+        left: 0,
+        transition: 'all ease-in 0.2s'
+      },
+    },
+    hover: {
+      border: `2px solid white`,
+      color: 'white',
+      backgroundColor: '#52565C',
+      '& #arrow_right': {
+        left: 8
+      }
     },
   };
 
@@ -83,7 +107,7 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
     },
   };
 
-  const solidVariantPropsByPalette = colorInPalette && {
+  const solidVariantPropsByPalette = colorInPalette && !isSecondary ? {
     main: {
       border: `2px solid transparent`,
       backgroundColor: colorInPalette.main,
@@ -109,12 +133,34 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
       backgroundColor: theme.palette.grey[300],
       color: theme.palette.common.white75,
     },
+  } : {
+      // secondary solid
+      main: {
+        border: `2px solid transparent`,
+        backgroundColor: colorInPalette?.main,
+        color: 'white',
+        // arrow right transition
+        '& #arrow_right': {
+          position: 'relative',
+          left: 0,
+          transition: 'all ease-in 0.2s'
+        }
+      },
+      hover: {
+        border: `2px solid transparent`,
+        color: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0.25)',
+        '& #arrow_right': {
+          left: 8
+        }
+      },
   };
 
   const iconStyleMain = {
     width: 48,
     minWidth: 48,
     padding: '0 !important',
+    justifyContent: 'center'
   }
 
   const iconCircleStyleMain = {
@@ -191,7 +237,7 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
     "icon-circle": colorInPalette
       ? iconCircleVariantPropsByPalette
       : defaultIconCircleVariantProps,
-      link: colorInPalette
+    link: colorInPalette
       ? linkVariantPropsByPalette
       : defaultLinkVariantProps,
   };
@@ -202,12 +248,23 @@ const getPropsByVariant = ({ variant, color, theme }: PropsByVariant) => {
 const IconWrapper = styled.span`
   padding-left: ${(props: iconWrapperProp) => props.leftSpacing ? spacing["xsmall"] : 0};
   padding-right: ${(props: iconWrapperProp) => props.rightSpacing ? spacing["xsmall"] : 0};
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 600px) {
+    padding-left: ${(props: iconWrapperProp) =>
+      props.leftSpacing ? 
+      (props.isSecondary ? spacing["xlarge"] : spacing["xsmall"]):
+      0
+    };
+  }
 `
 
 const StyledButton = ({
   color,
   size = "medium",
-  variant= "solid",
+  variant = "solid",
   enableElevation = false,
   disabled = false,
   theme
@@ -227,7 +284,7 @@ const StyledButton = ({
   }
 
   return {
-    height: 48,
+    minHeight: color === COLOR_SECONDARY ? 42 : 48,
     minWidth: 96,
     fontWeight: 500,
     cursor: 'pointer',
@@ -238,6 +295,10 @@ const StyledButton = ({
     borderRadius: theme.shape.borderRadius10,
     fontFamily: theme.typography.fontFamily,
     outline: 0,
+    boxSizing: 'border-box',
+    display :'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     boxShadow: enableElevation ? theme.shadows[1] : theme.shadows[3],
     ...(paddingBySize && { padding: paddingBySize }),
     ...(propsByVariant && propsByVariant.main),
@@ -257,11 +318,14 @@ const StyledButton = ({
       cursor: 'not-allowed',
       ...(propsByVariant && propsByVariant.disabled),
     },
+    '& > :first-of-type:last-of-type' : {
+      margin: '0 auto',
+    },
     fontSize: fontSizes.xsmall,
     // Mobile first queries
     /* Larger than mobile */
     '@media (min-width: 600px)': {
-      height: 52,
+      minHeight: 52,
       fontSize: fontSizes.small,
       ...(variant?.includes('icon') && iconStyleDesktop)
     },
@@ -284,7 +348,17 @@ export const Button = (props: IButtonProps) => {
   }
 
   const EndIcon: any = () => {
-    return props.endIcon ? <IconWrapper leftSpacing>{props.endIcon}</IconWrapper> : null
+    // if this is secondary button
+    // 'll show the right arrow icon
+    const isSecondary = props.color === COLOR_SECONDARY && !props.endIcon;
+    const secondaryStyles = props.color === COLOR_SECONDARY && !props.endIcon && {
+      // paddingLeft: spacing["xlarge"]
+    }
+    return props.endIcon || props.color === COLOR_SECONDARY ?
+      <IconWrapper leftSpacing style={{...secondaryStyles}} isSecondary={isSecondary}>
+        {props.endIcon || <ArrowRight />}
+      </IconWrapper> :
+      null
   }
 
   const ChildrenAndIcon = () => (
