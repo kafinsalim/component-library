@@ -2,7 +2,7 @@
 
 exports[`<Button /> should render the default button with a text 1`] = `
 .emotion-0 {
-  height: 48px;
+  min-height: 48px;
   min-width: 96px;
   font-weight: 500;
   cursor: pointer;
@@ -16,6 +16,19 @@ exports[`<Button /> should render the default button with a text 1`] = `
   border-radius: 10px;
   font-family: 'Rubik',sans-serif;
   outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
   border: 1px solid #EAEAEA;
   background-color: #EAEAEA;
@@ -32,9 +45,13 @@ exports[`<Button /> should render the default button with a text 1`] = `
   cursor: not-allowed;
 }
 
+.emotion-0 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
 @media (min-width:600px) {
   .emotion-0 {
-    height: 52px;
+    min-height: 52px;
     font-size: 0.825rem;
   }
 }
@@ -48,7 +65,7 @@ exports[`<Button /> should render the default button with a text 1`] = `
 
 exports[`<Button /> should render the primary button 1`] = `
 .emotion-0 {
-  height: 48px;
+  min-height: 48px;
   min-width: 96px;
   font-weight: 500;
   cursor: pointer;
@@ -62,6 +79,19 @@ exports[`<Button /> should render the primary button 1`] = `
   border-radius: 10px;
   font-family: 'Rubik',sans-serif;
   outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
   border: 2px solid transparent;
   background-color: #494B50;
@@ -94,9 +124,13 @@ exports[`<Button /> should render the primary button 1`] = `
   color: rgba(255,255,255,0.5);
 }
 
+.emotion-0 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
 @media (min-width:600px) {
   .emotion-0 {
-    height: 52px;
+    min-height: 52px;
     font-size: 0.825rem;
   }
 }
@@ -108,9 +142,318 @@ exports[`<Button /> should render the primary button 1`] = `
 </button>
 `;
 
+exports[`<Button /> should render the primary button with outline 1`] = `
+.emotion-0 {
+  min-height: 48px;
+  min-width: 96px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
+  border: 3px solid #F2CC23;
+  background-color: transparent;
+  color: #F2CC23;
+  font-size: 0.75rem;
+}
+
+.emotion-0 #loading_spinner_animated > path {
+  fill: #494B50;
+}
+
+.emotion-0:hover {
+  border: 3px solid #494B50;
+  color: #494B50;
+}
+
+.emotion-0:active {
+  border: 3px solid #E3BF22;
+  color: #2D2F33;
+}
+
+.emotion-0:focus {
+  border: 3px solid #888;
+  color: white;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  border: 3px solid #888;
+  color: #888;
+}
+
+.emotion-0 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    min-height: 52px;
+    font-size: 0.825rem;
+  }
+}
+
+<button
+  class="emotion-0"
+>
+  Primary
+</button>
+`;
+
+exports[`<Button /> should render the secondary button 1`] = `
+.emotion-1 {
+  min-height: 42px;
+  min-width: 96px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
+  border: 2px solid transparent;
+  background-color: #494B50;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.emotion-1 #arrow_right {
+  position: relative;
+  left: 0;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+}
+
+.emotion-1:hover {
+  border: 2px solid transparent;
+  color: white;
+  background-color: rgba(255,255,255,0.25);
+}
+
+.emotion-1:hover #arrow_right {
+  left: 8px;
+}
+
+.emotion-1:disabled {
+  cursor: not-allowed;
+}
+
+.emotion-1 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
+@media (min-width:600px) {
+  .emotion-1 {
+    min-height: 52px;
+    font-size: 0.825rem;
+  }
+}
+
+.emotion-0 {
+  padding-left: 0.5rem;
+  padding-right: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    padding-left: 3rem;
+  }
+}
+
+<button
+  class="emotion-1"
+>
+  Secondary
+  <span
+    class="emotion-0"
+  >
+    <svg
+      fill="none"
+      height="14"
+      id="arrow_right"
+      viewBox="0 0 19 14"
+      width="19"
+    >
+      <path
+        d="M.4 6.991l16.298-.03m0 0L11.252 1.61m5.447 5.351l-5.416 5.907"
+        stroke="#fff"
+        stroke-width="2"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`<Button /> should render the secondary button with outline 1`] = `
+.emotion-0 {
+  padding-left: 0.5rem;
+  padding-right: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    padding-left: 3rem;
+  }
+}
+
+.emotion-1 {
+  min-height: 42px;
+  min-width: 96px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Rubik',sans-serif;
+  outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
+  border: 2px solid #B9B8B9;
+  background-color: rgba(185,184,185,0.1);
+  color: white;
+  font-size: 0.75rem;
+}
+
+.emotion-1 #arrow_right {
+  position: relative;
+  left: 0;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+}
+
+.emotion-1:hover {
+  border: 2px solid white;
+  color: white;
+  background-color: #52565C;
+}
+
+.emotion-1:hover #arrow_right {
+  left: 8px;
+}
+
+.emotion-1:disabled {
+  cursor: not-allowed;
+}
+
+.emotion-1 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
+@media (min-width:600px) {
+  .emotion-1 {
+    min-height: 52px;
+    font-size: 0.825rem;
+  }
+}
+
+<button
+  class="emotion-1"
+>
+  Secondary
+  <span
+    class="emotion-0"
+  >
+    <svg
+      fill="none"
+      height="14"
+      id="arrow_right"
+      viewBox="0 0 19 14"
+      width="19"
+    >
+      <path
+        d="M.4 6.991l16.298-.03m0 0L11.252 1.61m5.447 5.351l-5.416 5.907"
+        stroke="#fff"
+        stroke-width="2"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
 exports[`<Button /> should render the variant="icon" 1`] = `
 .emotion-0 {
-  height: 48px;
+  min-height: 48px;
   min-width: 48px;
   font-weight: 500;
   cursor: pointer;
@@ -124,6 +467,19 @@ exports[`<Button /> should render the variant="icon" 1`] = `
   border-radius: 10px;
   font-family: 'Rubik',sans-serif;
   outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
   border: 2px solid transparent;
   background-color: #494B50;
@@ -157,9 +513,13 @@ exports[`<Button /> should render the variant="icon" 1`] = `
   color: rgba(255,255,255,0.5);
 }
 
+.emotion-0 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
 @media (min-width:600px) {
   .emotion-0 {
-    height: 52px;
+    min-height: 52px;
     font-size: 0.825rem;
     width: 52px;
     min-width: 52px;
@@ -175,7 +535,7 @@ exports[`<Button /> should render the variant="icon" 1`] = `
 
 exports[`<Button /> should render the variant="icon-circle" 1`] = `
 .emotion-0 {
-  height: 48px;
+  min-height: 48px;
   min-width: 48px;
   font-weight: 500;
   cursor: pointer;
@@ -189,6 +549,19 @@ exports[`<Button /> should render the variant="icon-circle" 1`] = `
   border-radius: 50%;
   font-family: 'Rubik',sans-serif;
   outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
   border: 2px solid transparent;
   background-color: #494B50;
@@ -222,9 +595,13 @@ exports[`<Button /> should render the variant="icon-circle" 1`] = `
   color: rgba(255,255,255,0.5);
 }
 
+.emotion-0 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
 @media (min-width:600px) {
   .emotion-0 {
-    height: 52px;
+    min-height: 52px;
     font-size: 0.825rem;
     width: 52px;
     min-width: 52px;
@@ -240,7 +617,7 @@ exports[`<Button /> should render the variant="icon-circle" 1`] = `
 
 exports[`<Button /> should render with disabled attribute & cannot be click 1`] = `
 .emotion-0 {
-  height: 48px;
+  min-height: 48px;
   min-width: 96px;
   font-weight: 500;
   cursor: pointer;
@@ -255,6 +632,19 @@ exports[`<Button /> should render with disabled attribute & cannot be click 1`] 
   border-radius: 10px;
   font-family: 'Rubik',sans-serif;
   outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
   border: 1px solid #EAEAEA;
   background-color: #EAEAEA;
@@ -266,9 +656,13 @@ exports[`<Button /> should render with disabled attribute & cannot be click 1`] 
   cursor: not-allowed;
 }
 
+.emotion-0 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
 @media (min-width:600px) {
   .emotion-0 {
-    height: 52px;
+    min-height: 52px;
     font-size: 0.825rem;
   }
 }
@@ -283,7 +677,7 @@ exports[`<Button /> should render with disabled attribute & cannot be click 1`] 
 
 exports[`<Button /> should render with enable elevation 1`] = `
 .emotion-0 {
-  height: 48px;
+  min-height: 48px;
   min-width: 96px;
   font-weight: 500;
   cursor: pointer;
@@ -297,6 +691,19 @@ exports[`<Button /> should render with enable elevation 1`] = `
   border-radius: 10px;
   font-family: 'Rubik',sans-serif;
   outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   box-shadow: 0px 5px 10px rgba(0,0,0,0.12);
   border: 1px solid #EAEAEA;
   background-color: #EAEAEA;
@@ -318,9 +725,13 @@ exports[`<Button /> should render with enable elevation 1`] = `
   cursor: not-allowed;
 }
 
+.emotion-0 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
 @media (min-width:600px) {
   .emotion-0 {
-    height: 52px;
+    min-height: 52px;
     font-size: 0.825rem;
   }
 }
@@ -348,7 +759,7 @@ exports[`<Button /> should render with loading spinner 1`] = `
 }
 
 .emotion-1 {
-  height: 48px;
+  min-height: 48px;
   min-width: 96px;
   font-weight: 500;
   cursor: pointer;
@@ -362,6 +773,19 @@ exports[`<Button /> should render with loading spinner 1`] = `
   border-radius: 10px;
   font-family: 'Rubik',sans-serif;
   outline: 0;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
   border: 1px solid #EAEAEA;
   background-color: #EAEAEA;
@@ -378,9 +802,13 @@ exports[`<Button /> should render with loading spinner 1`] = `
   cursor: not-allowed;
 }
 
+.emotion-1 > :first-of-type:last-of-type {
+  margin: 0 auto;
+}
+
 @media (min-width:600px) {
   .emotion-1 {
-    height: 52px;
+    min-height: 52px;
     font-size: 0.825rem;
   }
 }
@@ -397,6 +825,7 @@ exports[`<Button /> should render with loading spinner 1`] = `
     class="emotion-0"
     fill="none"
     height="24"
+    id="loading_spinner_animated"
     viewBox="0 0 24 24"
     width="24"
   >

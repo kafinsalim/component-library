@@ -53,6 +53,11 @@ const palette = {
     light: white50,
     contrastText: 'white',
   },
+  secondary: {
+    main: greyDark,
+    light: white50,
+    contrastText: 'white',
+  },
   error: {
     main: '#A51C30',
     light: '#A7333F',

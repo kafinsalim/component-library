@@ -17,36 +17,23 @@ export default {
   },
 };
 
-export const Appearances = () => {
-  return (
-    <React.Fragment>
-      <SpacingBottom>
-        <Button> BUTTON </Button>
-      </SpacingBottom>
-      <SpacingBottom>
-        <Button color="primary"> PRIMARY </Button>
-      </SpacingBottom>
-      <SpacingBottom>
-        <Button color="primary" variant="icon"> ☕ </Button>
-      </SpacingBottom>
-      <SpacingBottom>
-        <Button color="primary" variant="icon-circle"> ☕ </Button>
-      </SpacingBottom>
-      <SpacingBottom>
-        <Button color="primary" variant="link"> OTHER </Button>
-      </SpacingBottom>
-    </React.Fragment>
-  );
-};
-
-export const WithDarkBackground = () => {
+export const Appereances = () => {
   return (
     <DarkBackground>
       <SpacingBottom>
-        <Button> BUTTON </Button>
+        <Button> DEFAULT </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="outline"> PRIMARY OUTLINE </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="secondary"> SECONDARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="secondary" variant="outline"> SECONDARY OUTLINE </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button color="primary" variant="icon"> ☕ </Button>
@@ -63,12 +50,21 @@ export const WithDarkBackground = () => {
 
 export const DisableState = () => {
   return (
-    <React.Fragment>
+    <DarkBackground>
       <SpacingBottom>
-        <Button disabled> BUTTON </Button>
+        <Button disabled> DEFAULT </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button disabled color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button disabled color="primary" variant="outline"> PRIMARY OUTLINE </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button disabled color="secondary"> SECONDARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button disabled color="secondary" variant="outline"> SECONDARY OUTLINE </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button disabled color="primary" variant="icon"> ☕ </Button>
@@ -76,18 +72,27 @@ export const DisableState = () => {
       <SpacingBottom>
         <Button disabled color="primary" variant="icon-circle"> ☕ </Button>
       </SpacingBottom>
-    </React.Fragment>
+    </DarkBackground>
   );
 };
 
 export const LoadingState = () => {
   return (
-    <React.Fragment>
+    <DarkBackground>
       <SpacingBottom>
-        <Button loading> BUTTON </Button>
+        <Button loading> DEFAULT </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button loading color="primary"> PRIMARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button loading color="primary" variant="outline"> PRIMARY OUTLINE </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button loading color="secondary"> SECONDARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button loading color="secondary" variant="outline"> SECONDARY OUTLINE </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button loading color="primary" variant="icon"> ☕ </Button>
@@ -95,39 +100,57 @@ export const LoadingState = () => {
       <SpacingBottom>
         <Button loading color="primary" variant="icon-circle"> ☕ </Button>
       </SpacingBottom>
-    </React.Fragment>
+    </DarkBackground>
   );
 };
 
 export const WithIcon = () => {
   return (
-    <React.Fragment>
+    <DarkBackground>
       <SpacingBottom>
-        <Button startIcon={"😜"} endIcon={"►"}> BUTTON </Button>
+        <Button startIcon={"😜"} endIcon={"►"}> DEFAULT </Button>
       </SpacingBottom>
       <SpacingBottom>
         <Button startIcon={"😜"} endIcon={"►"} color="primary"> PRIMARY </Button>
       </SpacingBottom>
-  </React.Fragment>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"} color="primary" variant="outline"> PRIMARY OUTLINE </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"} color="secondary"> SECONDARY </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button startIcon={"😜"} endIcon={"►"} color="secondary" variant="outline"> SECONDARY OUTLINE </Button>
+      </SpacingBottom>
+  </DarkBackground>
   )
 };
 
 export const Stressed = () => {
   return (
-    <React.Fragment>
+    <DarkBackground>
       <SpacingBottom>
-        <Button startIcon={"😜"} endIcon={"►"}> BUTTON1IO23IO3UIO32I32OI32IO32OI3UI23UOI2U32OI3I232I323 2I3UI2O3UI23IO2U3I2I3UI23I2I3 </Button>
+        <Button> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
       <SpacingBottom>
-        <Button startIcon={"😜"} endIcon={"►"} color="primary"> PRIMARY 23KLL3JK2J3KL2J 3LK2ASDASDASDASDJ3LK2J3LK23 2K3J 2LK3J2K3JL23J2K3J2L3J2K32 </Button>
+        <Button color="primary"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
       <SpacingBottom>
-        <Button color="primary" variant="icon"> AKJSDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD </Button>
+        <Button color="primary" variant="outline"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
       <SpacingBottom>
-        <Button color="primary" variant="icon-circle"> ASDJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ </Button>
+        <Button color="secondary"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
       </SpacingBottom>
-  </React.Fragment>
+      <SpacingBottom>
+        <Button color="secondary" variant="outline"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="icon"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
+      </SpacingBottom>
+      <SpacingBottom>
+        <Button color="primary" variant="icon-circle"> QWERTYASDFGHJKLSAJDJSADJHDJ SADGHSADHSADGJHASGDJHASGDJHSADHJSADASD ASDSAD </Button>
+      </SpacingBottom>
+  </DarkBackground>
   )
 };
 
@@ -146,15 +169,17 @@ const theme = {
 export const OverwriteWithTheme = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Button
-        variant={text('variant', 'solid')}
-        color={text('color', 'orange')}
-        size={text('size', 'medium')}
-        disabled={boolean('disabled', false)}
-        enableElevation={boolean('enableElevation', false)}
-      >
-        ORANGE
-      </Button>
+      <DarkBackground>
+        <Button
+          variant={text('variant', 'solid')}
+          color={text('color', 'orange')}
+          size={text('size', 'medium')}
+          disabled={boolean('disabled', false)}
+          enableElevation={boolean('enableElevation', false)}
+        >
+          ORANGE
+        </Button>
+      </DarkBackground>
     </ThemeProvider>
   );
 };

@@ -33,4 +33,5 @@ export interface IButtonProps {
 export type iconWrapperProp = {
   leftSpacing?: boolean,
   rightSpacing?: boolean,
+  isSecondary?: boolean
 }
